@@ -30,6 +30,7 @@
   "otherPortsAttributes": {
     "onAutoForward": "ignore"
   },
-  "overrideCommand": false,
+  "overrideCommand": true,
+  "postStartCommand": "nohup /bin/entrypoint /bin/true > /tmp/aclabs-entrypoint.log 2>&1 < /dev/null",
   "shutdownAction": "none"
 }
