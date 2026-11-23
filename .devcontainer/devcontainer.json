@@ -1,6 +1,8 @@
 {
   "name": "acLabs RCF quickstart (lab-base)",
-  "image": "ghcr.io/aristanetworks/aclabs/lab-base:python3.12-avd-v6.5.0-clab0.83.0-rev2.7.3",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
   "initializeCommand": "cp \"${localWorkspaceFolder}/lab/images/\"cEOS* \"${localWorkspaceFolder}/lab/\" 2>/dev/null || true",
   "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/lab-commander-playground,type=bind",
   "workspaceFolder": "/workspaces/lab-commander-playground/lab",
