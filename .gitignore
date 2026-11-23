@@ -1,0 +1,32 @@
+# Licensed images stay local.
+/lab/images/
+*.tar
+*.tar.xz
+*.tar.gz
+# Generated lab and editor state.
+**/cv-onboarding-token
+**/.lab/
+**/LAB-READY.md
+**/.quarto/
+**/*_files/
+.DS_Store
+*.log
+.env
+.env.*
+!.env.example
+**/lab_vars.env
+**/lab_vars.private.env
+
+# ignore clab files
+clab-*
+*.bak
+
+# ignore cv onboarding token
+clab/cv-onboarding-token
+
+# discard all config backups as we don't need them
+avd_inventory/config_backup/
+
+# gitignore downloaded cEOS-lab images
+cEOS-lab-*
+cEOSarm-lab-*

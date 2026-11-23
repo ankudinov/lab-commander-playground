@@ -1,0 +1,35 @@
+{
+  "name": "acLabs RCF quickstart (lab-base)",
+  "image": "ghcr.io/aristanetworks/aclabs/lab-base:python3.12-avd-v6.5.0-clab0.83.0-rev2.7.3",
+  "initializeCommand": "cp \"${localWorkspaceFolder}/lab/images/\"cEOS* \"${localWorkspaceFolder}/lab/\" 2>/dev/null || true",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/lab-commander-playground,type=bind",
+  "workspaceFolder": "/workspaces/lab-commander-playground/lab",
+  "containerUser": "avd",
+  "remoteUser": "avd",
+  "containerEnv": {
+    "REMOTE_CONTAINERS": "true",
+    "CODESPACES": "false",
+    "GIT_INIT": "false",
+    "CEOS_LAB_VERSION": "4.36.2F",
+    "CONTAINERWSF": "/workspaces/lab-commander-playground/lab",
+    "LABUSERNAME": "admin",
+    "LABPASSPHRASE": "admin",
+    "PASSWORD": "arista123"
+  },
+  "appPort": [
+    "127.0.0.1:8080:8080"
+  ],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": false,
+        "remote.restoreForwardedPorts": false
+      }
+    }
+  },
+  "otherPortsAttributes": {
+    "onAutoForward": "ignore"
+  },
+  "overrideCommand": false,
+  "shutdownAction": "none"
+}

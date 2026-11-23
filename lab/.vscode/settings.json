@@ -1,0 +1,23 @@
+{
+  "containerlab": {
+    "showWelcomePage": false,
+    "skipUpdateCheck": true,
+    "defaultSshUser": "admin",
+    "editor": {
+      "defaultKind": "ceos",
+      "lockLabByDefault": false,
+      "node": {
+        "sshUserMapping": {
+          "ceos": "admin"
+        }
+      }
+    }
+  },
+  "remote.autoForwardPorts": false,
+  "remote.restoreForwardedPorts": false,
+  "terminal.integrated.defaultLocation": "editor",
+  "workbench.colorTheme": "Light Modern",
+  "workbench.editorAssociations": {
+    "*.md": "vscode.markdown.preview.editor"
+  }
+}

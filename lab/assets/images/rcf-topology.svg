@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="720" height="560" style="max-width:100%;height:auto" role="group" aria-labelledby="rcf-topology-title rcf-topology-desc">
+  <title id="rcf-topology-title">RCF Sandbox topology</title>
+  <desc id="rcf-topology-desc">Six EOS devices and seven links from topology.clab.yml. Select a device to open its SSH terminal as admin.</desc>
+  <style>
+    .rcf-edge { stroke: var(--bs-secondary-color, #6c757d); stroke-width: 2; fill: none; }
+    .rcf-port { fill: var(--bs-body-color, #212529); font: 13px monospace; text-anchor: middle; }
+    .rcf-device rect { fill: var(--bs-tertiary-bg, #e9ecef); stroke: var(--bs-primary, #0d6efd); stroke-width: 2; }
+    .rcf-device text { fill: var(--bs-body-color, #212529); text-anchor: middle; font-family: monospace; }
+    .rcf-device:hover rect, .rcf-device:focus rect { stroke: var(--bs-body-color, #212529); stroke-width: 3; }
+  </style>
+  <g data-endpoints="EOS1:et1 EOS2:et1">
+    <title>EOS1:et1 ↔ EOS2:et1</title>
+    <path class="rcf-edge" d="M 342 230 L 558 230"/>
+    <text class="rcf-port" x="361" y="216">et1</text>
+    <text class="rcf-port" x="539" y="216">et1</text>
+  </g>
+  <g data-endpoints="EOS1:et2 EOS4:et2">
+    <title>EOS1:et2 ↔ EOS4:et2</title>
+    <path class="rcf-edge" d="M 280 262 L 280 438"/>
+    <text class="rcf-port" x="299" y="287">et2</text>
+    <text class="rcf-port" x="299" y="420">et2</text>
+  </g>
+  <g data-endpoints="EOS1:et3 EOS6:et1">
+    <title>EOS1:et3 ↔ EOS6:et1</title>
+    <path class="rcf-edge" d="M 310 198 L 420 102"/>
+    <text class="rcf-port" x="319" y="174">et3</text>
+    <text class="rcf-port" x="400" y="123">et1</text>
+  </g>
+  <g data-endpoints="EOS1:et4 EOS5:et1">
+    <title>EOS1:et4 ↔ EOS5:et1</title>
+    <path class="rcf-edge" d="M 250 198 L 110 132"/>
+    <text class="rcf-port" x="230" y="178">et4</text>
+    <text class="rcf-port" x="130" y="153">et1</text>
+  </g>
+  <g data-endpoints="EOS2:et2 EOS3:et2">
+    <title>EOS2:et2 ↔ EOS3:et2</title>
+    <path class="rcf-edge" d="M 620 262 L 620 438"/>
+    <text class="rcf-port" x="639" y="287">et2</text>
+    <text class="rcf-port" x="639" y="420">et2</text>
+  </g>
+  <g data-endpoints="EOS2:et3 EOS6:et2">
+    <title>EOS2:et3 ↔ EOS6:et2</title>
+    <path class="rcf-edge" d="M 590 198 L 480 102"/>
+    <text class="rcf-port" x="575" y="174">et3</text>
+    <text class="rcf-port" x="502" y="123">et2</text>
+  </g>
+  <g data-endpoints="EOS3:et1 EOS4:et1">
+    <title>EOS3:et1 ↔ EOS4:et1</title>
+    <path class="rcf-edge" d="M 558 470 L 342 470"/>
+    <text class="rcf-port" x="539" y="456">et1</text>
+    <text class="rcf-port" x="361" y="456">et1</text>
+  </g>
+  <a class="rcf-device" data-node="EOS1" href="command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS1%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Editor%22%7D%5D" aria-label="SSH admin@EOS1">
+    <title>SSH admin@EOS1 (172.100.100.101)</title>
+    <rect x="218" y="198" width="124" height="64" rx="8"/>
+    <text x="280" y="227" font-size="18" font-weight="bold">EOS1</text>
+    <text x="280" y="248" font-size="12">172.100.100.101</text>
+  </a>
+  <a class="rcf-device" data-node="EOS2" href="command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS2%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Panel%22%7D%5D" aria-label="SSH admin@EOS2">
+    <title>SSH admin@EOS2 (172.100.100.102)</title>
+    <rect x="558" y="198" width="124" height="64" rx="8"/>
+    <text x="620" y="227" font-size="18" font-weight="bold">EOS2</text>
+    <text x="620" y="248" font-size="12">172.100.100.102</text>
+  </a>
+  <a class="rcf-device" data-node="EOS3" href="command:aclabs.ssh?%5B%22admin%40EOS3%22%5D" aria-label="SSH admin@EOS3">
+    <title>SSH admin@EOS3 (172.100.100.103)</title>
+    <rect x="558" y="438" width="124" height="64" rx="8"/>
+    <text x="620" y="467" font-size="18" font-weight="bold">EOS3</text>
+    <text x="620" y="488" font-size="12">172.100.100.103</text>
+  </a>
+  <a class="rcf-device" data-node="EOS4" href="command:aclabs.ssh?%5B%22admin%40EOS4%22%5D" aria-label="SSH admin@EOS4">
+    <title>SSH admin@EOS4 (172.100.100.104)</title>
+    <rect x="218" y="438" width="124" height="64" rx="8"/>
+    <text x="280" y="467" font-size="18" font-weight="bold">EOS4</text>
+    <text x="280" y="488" font-size="12">172.100.100.104</text>
+  </a>
+  <a class="rcf-device" data-node="EOS5" href="command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS5%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Panel%22%7D%5D" aria-label="SSH admin@EOS5">
+    <title>SSH admin@EOS5 (172.100.100.105)</title>
+    <rect x="18" y="68" width="124" height="64" rx="8"/>
+    <text x="80" y="97" font-size="18" font-weight="bold">EOS5</text>
+    <text x="80" y="118" font-size="12">172.100.100.105</text>
+  </a>
+  <a class="rcf-device" data-node="EOS6" href="command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS6%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Editor%22%7D%5D" aria-label="SSH admin@EOS6">
+    <title>SSH admin@EOS6 (172.100.100.106)</title>
+    <rect x="388" y="38" width="124" height="64" rx="8"/>
+    <text x="450" y="67" font-size="18" font-weight="bold">EOS6</text>
+    <text x="450" y="88" font-size="12">172.100.100.106</text>
+  </a>
+</svg>
