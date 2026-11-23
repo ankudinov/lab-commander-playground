@@ -10,7 +10,7 @@ format:
     controls: true
     progress: true
     code-copy: false
-    footer: '[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}'
+    footer: '[Back to dashboard](../lab-dashboard.html)'
     css: node-buttons.css
 ---
 

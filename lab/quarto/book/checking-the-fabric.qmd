@@ -1,6 +1,6 @@
 # Checking the fabric {#sec-checking}
 
-[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+[Back to dashboard](../lab-dashboard.html)
 
 Start with the device inventory in @tbl-inventory. The link plan is described in
 @sec-underlay; both references should open the matching section of the previous

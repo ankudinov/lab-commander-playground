@@ -34,7 +34,7 @@ format:
 
 _Tech Library Solution Guide_
 
-[Lab handbook](../book/index.html){data-preview-source="quarto/book/index.qmd"} · [Presentation slides](../slides/preview-briefing.html){data-preview-source="quarto/slides/preview-briefing.qmd"}
+[Lab handbook](book/index.html) · [Presentation slides](slides/preview-briefing.html)
 
 [Open three terminals][right-three-fixed]
 [Reset three shells][close-and-reuse-lab-terminals]

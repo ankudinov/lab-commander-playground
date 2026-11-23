@@ -2,4 +2,9 @@ project:
   type: default
   render:
     - lab-dashboard.qmd
-  output-dir: quarto/_site/dashboard
+  output-dir: quarto/_site
+  # Preview renders only this project; HTML links don't render the separate
+  # book/slides projects. Build them into the shared output so navigation works.
+  post-render:
+    - quarto render quarto/book
+    - quarto render quarto/slides

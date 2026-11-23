@@ -1,6 +1,6 @@
 # Welcome {.unnumbered}
 
-[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+[Back to dashboard](../lab-dashboard.html)
 
 This miniature handbook tests a Quarto **book**: several documents share a
 sidebar, chapter numbering, cross-references, search and previous/next navigation.

@@ -1,6 +1,6 @@
 # Building a fabric {#sec-building}
 
-[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+[Back to dashboard](../lab-dashboard.html)
 
 Our example fabric has two spine switches, two leaf switches and two Linux
 hosts. Each leaf connects to both spines; each host connects to one leaf.
