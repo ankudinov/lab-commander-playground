@@ -31,6 +31,6 @@
     "onAutoForward": "ignore"
   },
   "overrideCommand": true,
-  "postStartCommand": "nohup /bin/entrypoint /bin/true > /tmp/aclabs-entrypoint.log 2>&1 < /dev/null",
+  "postStartCommand": "nohup /bin/entrypoint /bin/true > /tmp/aclabs-entrypoint.log 2>&1 < /dev/null && rm -f \"$CONTAINERWSF\"/cEOS-*tar.xz",
   "shutdownAction": "none"
 }
