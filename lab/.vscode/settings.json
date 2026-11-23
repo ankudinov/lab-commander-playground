@@ -15,7 +15,7 @@
   },
   "remote.autoForwardPorts": false,
   "remote.restoreForwardedPorts": false,
-  "terminal.integrated.defaultLocation": "editor",
+  "terminal.integrated.defaultLocation": "view",
   "workbench.colorTheme": "Light Modern",
   "workbench.editorAssociations": {
     "*.md": "vscode.markdown.preview.editor"

@@ -1,0 +1,34 @@
+::: {.ssh-demo}
+
+One click → logged in as `admin`. Each node opens its own terminal tab; clicking the same node again brings the existing tab to focus.
+
+**Router**
+
+::: {.grid .gap-2}
+
+::: {.g-col-6 .g-col-md-4}
+[EOS1](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS1","user":"admin","TerminalLocation":"Editor"}]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[EOS2](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS2%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Panel%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[EOS3](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='["admin@EOS3"]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[EOS4](command:aclabs.ssh?%5B%22admin%40EOS4%22%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[EOS5](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS5","user":"admin","TerminalLocation":"Panel"}]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[EOS6](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS6%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Editor%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+:::
+:::

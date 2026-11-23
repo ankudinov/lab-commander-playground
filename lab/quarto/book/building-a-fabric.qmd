@@ -1,0 +1,45 @@
+# Building a fabric {#sec-building}
+
+[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+
+Our example fabric has two spine switches, two leaf switches and two Linux
+hosts. Each leaf connects to both spines; each host connects to one leaf.
+
+## Device roles {#sec-device-roles}
+
+| Role | Nodes | Purpose |
+| :--- | :--- | :--- |
+| Spine | spine-1, spine-2 | Carry routed traffic between leaves |
+| Leaf | leaf-1, leaf-2 | Attach hosts and terminate VXLAN tunnels |
+| Host | host-1, host-2 | Send traffic through the fabric |
+
+: Example inventory. {#tbl-inventory}
+
+## Underlay links {#sec-underlay}
+
+The underlay provides IP reachability between the switches. The overlay carries
+tenant traffic using EVPN and VXLAN. Verify the underlay before troubleshooting
+overlay routes.
+
+::: {.callout-tip}
+Give each point-to-point link its own subnet and keep interface descriptions
+consistent at both ends. This makes a failed adjacency easier to trace.
+:::
+
+## Example topology fragment
+
+```yaml
+# Displayed as text; this example never starts containers.
+name: preview-fabric
+topology:
+  nodes:
+    spine-1:
+      kind: ceos
+    leaf-1:
+      kind: ceos
+  links:
+    - endpoints: ["spine-1:eth1", "leaf-1:eth1"]
+```
+
+Continue with the checks in @sec-checking. The next chapter links back to
+@tbl-inventory and @sec-underlay to exercise cross-file references.

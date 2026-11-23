@@ -1,0 +1,112 @@
+---
+title: "Inside the Lab"
+subtitle: "A short Quarto presentation for preview checks"
+format:
+  revealjs:
+    theme: simple
+    slide-number: "c/t"
+    transition: none
+    center: false
+    controls: true
+    progress: true
+    code-copy: false
+    footer: '[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}'
+    css: node-buttons.css
+---
+
+## A small fabric
+
+- Two spine switches.
+- Two leaf switches.
+- Two hosts, one attached to each leaf.
+
+Everything in this deck is illustrative. No lab resources are created.
+
+::: {.notes}
+Introduce the topology before moving to the next slide. These are native
+Reveal.js speaker notes; press S in a browser to open the speaker view.
+:::
+
+## 🔐 SSH to Nodes
+
+{{< include ../shared/_connect-to-nodes.qmd >}}
+
+## Build it in stages
+
+::: {.incremental}
+- Define nodes and links.
+- Establish underlay reachability.
+- Configure EVPN and VXLAN.
+- Validate host-to-host traffic.
+:::
+
+## Roles and responsibilities
+
+:::: {.columns}
+::: {.column width="50%"}
+### Network
+
+- Spines carry routed traffic.
+- Leaves attach endpoints.
+- EVPN distributes reachability.
+:::
+
+::: {.column width="50%"}
+### Checks
+
+| Layer | Check |
+| :--- | :--- |
+| Physical | Interfaces up |
+| Underlay | Loopbacks reachable |
+| Overlay | EVPN routes present |
+:::
+::::
+
+## Read the configuration
+
+```yaml
+# This is a displayed code sample, not an executable cell.
+fabric:
+  name: preview-fabric
+  spines: [spine-1, spine-2]
+  leaves: [leaf-1, leaf-2]
+  overlay: evpn-vxlan
+```
+
+Native Quarto highlighting should remain readable at presentation scale.
+
+## Validate the result
+
+::: {.callout-note}
+## Example result
+
+Six nodes reachable, eight BGP sessions established, host traffic passed.
+:::
+
+Change one result in this slide, save, and check Quarto's live refresh.
+
+## Discuss the failure
+
+One leaf cannot reach the remote host. What would you check first?
+
+::: {.fragment}
+Start with its interfaces and underlay reachability, then inspect overlay routes.
+:::
+
+::: {.notes}
+Pause for answers. Advance once to reveal the suggested starting point.
+:::
+
+## Preview checklist
+
+- Advance through the incremental list and the answer fragment.
+- Check columns, the table, code highlighting and the callout.
+- Use the left/right arrows to revisit slides.
+- Press Esc for the slide overview, then select a slide.
+- Save an edit and confirm the deck refreshes.
+
+## Ready for the next lab
+
+**Plan → build → validate → explain.**
+
+This deck uses only Quarto's built-in Reveal.js format and Markdown content.

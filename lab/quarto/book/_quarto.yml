@@ -1,0 +1,17 @@
+project:
+  type: book
+  output-dir: ../_site/book
+
+book:
+  title: "Network Lab Handbook"
+  subtitle: "A small book for testing preview navigation"
+  chapters:
+    - index.qmd
+    - building-a-fabric.qmd
+    - checking-the-fabric.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true
+    number-sections: true

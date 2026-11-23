@@ -1,0 +1,237 @@
+---
+pagetitle: "Arista RCF QuickStart Solution Guide · Lab dashboard"
+format:
+  html:
+    theme: cosmo
+    page-layout: article
+    grid:
+      body-width: 920px
+    anchor-sections: false
+    code-copy: false
+---
+
+<!-- reusable commands section -->
+[right-three]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},{"command":"workbench.action.terminal.new","args":{"location":{"viewColumn":2}}},{"command":"workbench.action.terminal.new","args":{"location":{"viewColumn":3}}},{"command":"workbench.action.terminal.new","args":{"location":{"viewColumn":4}}}]}]'}
+
+[right-three-fixed]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},"workbench.action.focusSecondEditorGroup"]}]'}
+
+[lab-terminals]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},{"command":"aclabs.shell","args":{"id":"lab-shell","name":"Lab shell","TerminalLocation":{"viewColumn":2}}},{"command":"aclabs.ssh","args":{"host":"EOS1","user":"admin","TerminalLocation":{"viewColumn":3}}},{"command":"aclabs.ssh","args":{"host":"EOS2","user":"admin","TerminalLocation":{"viewColumn":4}}}]}]'}
+
+[close-terminals]: command:workbench.action.terminal.killAll {.btn .btn-danger}
+[close-terminals-2]: command:runCommands {.btn .btn-danger data-args='[{"commands":[{"command":"workbench.action.terminal.killAll"},{"command":"vscode.setEditorLayout","args":{"groups":[{}]}},{"command":"workbench.action.closePanel"}]}]'}
+
+<!-- Native reset preserves group 1 and closes all editor tabs in the other groups,
+     including non-terminal documents. Panel terminals are not closed. -->
+[close-and-reuse-lab-terminals]: command:runCommands {.btn .btn-primary data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},{"command":"workbench.action.createTerminalEditor","args":{"location":{"viewColumn":1},"config":{"name":"Shell 1"}}},{"command":"workbench.action.createTerminalEditor","args":{"location":{"viewColumn":2},"config":{"name":"Shell 2"}}},{"command":"workbench.action.createTerminalEditor","args":{"location":{"viewColumn":3},"config":{"name":"Shell 3"}}}]}]'}
+
+[run-native-shell]: command:runCommands {.btn .btn-primary data-args='[{"commands":["workbench.action.focusSecondEditorGroup",{"command":"workbench.action.terminal.sendSequence","args":{"text":"whoami\rpwd\runame -sr\r"}}]}]'}
+[run-native-eos]: command:runCommands {.btn .btn-primary data-args='[{"commands":["workbench.action.focusThirdEditorGroup",{"command":"workbench.action.terminal.sendSequence","args":{"text":"terminal length 0\rshow version\rshow running-config\r"}},"workbench.action.focusFourthEditorGroup",{"command":"workbench.action.terminal.sendSequence","args":{"text":"terminal length 0\rshow version\rshow running-config\r"}}]}]'}
+<!-- end of reusable commands section -->
+
+::: {.lab-dashboard .my-4}
+
+# 🧪 Arista RCF QuickStart Solution Guide {#lab-name .unlisted .unnumbered}
+
+_Tech Library Solution Guide_
+
+[Lab handbook](../book/index.html){data-preview-source="quarto/book/index.qmd"} · [Presentation slides](../slides/preview-briefing.html){data-preview-source="quarto/slides/preview-briefing.qmd"}
+
+[Open three terminals][right-three-fixed]
+[Reset three shells][close-and-reuse-lab-terminals]
+[Close all terminals][close-terminals-2]
+
+[SSH terminals][lab-terminals]
+
+::: {.callout-note}
+**Native terminal demo:** first open **SSH terminals**, complete both SSH logins,
+then use Run at idle prompts. Shell Run targets editor group 2; EOS Run targets
+editor groups 3 and 4. These buttons do not verify terminal names, connections
+or the active layout. If a different setup is open, they can send commands to
+its terminals instead. They do not wait for authentication or command completion.
+
+The command text is repeated in each button's reference definition above.
+Changing a visible snippet does not update its Run action automatically;
+update the corresponding `data-args` text too. Snippet IDs are labels for now,
+not native VS Code lookup targets. This example adds no JavaScript or extension
+code.
+:::
+
+**Lab shell**
+
+::: {.grid .align-items-start}
+::: {.g-col-10}
+```{.bash #native-shell-snippet}
+whoami
+pwd
+uname -sr
+```
+:::
+::: {.g-col-2 .text-end}
+[▶ Run][run-native-shell]
+:::
+:::
+
+**Both EOS devices**
+
+::: {.grid .align-items-start}
+::: {.g-col-10}
+```{.text #native-eos-snippet}
+show version
+show running-config
+```
+:::
+::: {.g-col-2 .text-end}
+[▶ Run][run-native-eos]
+:::
+:::
+
+🟢 **Lab Ready** &nbsp;·&nbsp; 6 nodes up in  2.5s
+
+**Credentials** `admin` / `admin`
+
+**Validated with**
+[cEOS · 4.36.2F]{.badge .text-bg-primary}
+[Containerlab · 0.81.1]{.badge .text-bg-primary}
+
+**Resources**
+[CPUs · 16]{.badge .text-bg-primary}
+[Memory · 64 GB]{.badge .text-bg-primary}
+[Storage · 64 GB]{.badge .text-bg-primary}
+
+---
+
+::: {.card .lab-card .p-3 .mb-3 aria-label="Quick actions"}
+## 🚀 Quick Actions {#quick-actions .unlisted .unnumbered}
+
+::: {.grid .gap-2}
+
+::: {.g-col-12 .g-col-sm-6 .g-col-xl-4}
+[📖 Tech Library Guide](https://tech-library.arista.com/solution_guides/rcf_quickstart/){.btn .btn-primary .w-100 .text-start}
+
+External deployment guide on [tech-library.arista.com](https://tech-library.arista.com). Opens in your browser.
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-xl-4}
+[🔭 Open Topology View](command:containerlab.lab.graph.topoViewer){.btn .btn-primary .w-100 .text-start data-args='[{"scheme":"file","path":"/workspaces/lab-commander-playground/lab/clab/topology.clab.yml"}]'}
+
+Launch the interactive ContainerLab topology graph in a new editor tab.
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-xl-4}
+[📚 Open README](command:vscode.open){.btn .btn-primary .w-100 .text-start data-args='[{"scheme":"file","path":"/workspaces/lab-commander-playground/lab/README.md"},{"preview":false}]'}
+
+Lab documentation, walkthrough, and operational instructions (build / deploy / validate).
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-xl-4}
+[📂 Open Topology File](command:vscode.openWith){.btn .btn-primary .w-100 .text-start data-args='[{"scheme":"file","path":"/workspaces/lab-commander-playground/lab/clab/topology.clab.yml"},"default"]'}
+
+Inspect or edit the `topology.clab.yml` source.
+:::
+
+::: {.g-col-12 .g-col-sm-6 .g-col-xl-4}
+[🖥️ Open a Terminal](command:workbench.action.terminal.new){.btn .btn-primary .w-100 .text-start data-args='[{"location":1,"cwd":"/workspaces/lab-commander-playground/lab"}]'}
+
+Open a shell terminal in the bottom panel for running commands like `make build`, `make deploy`, etc.
+:::
+
+:::
+:::
+---
+
+::: {.card .lab-card .p-3 .mb-3 aria-label="SSH to nodes"}
+## 🔐 SSH to Nodes {#connect-to-nodes .unlisted .unnumbered}
+
+One click → logged in as `admin`. Each node opens its own terminal tab; clicking the same node again brings the existing tab to focus.
+
+**Router**
+
+::: {.grid .gap-2}
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS1](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS1","user":"admin","TerminalLocation":"Editor"}]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS2](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS2%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Panel%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS3](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='["admin@EOS3"]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS4](command:aclabs.ssh?%5B%22admin%40EOS4%22%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS5](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS5","user":"admin","TerminalLocation":"Panel"}]'}
+:::
+
+::: {.g-col-6 .g-col-md-4}
+[$ ssh EOS6](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS6%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Editor%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+:::
+
+:::
+:::
+---
+
+## 🗺️ Lab Topology {.unlisted .unnumbered}
+
+```{=html}
+{{< include assets/images/rcf-topology.svg >}}
+```
+
+---
+
+<details>
+<summary><strong>🔌 &nbsp; Node Inventory</strong> &nbsp; <sub>(click to expand)</sub></summary>
+
+| Role | Node | Kind | Mgmt IP |
+|------|------|------|---------|
+| Router | `EOS1` | arista_ceos | `172.100.100.101` |
+| Router | `EOS2` | arista_ceos | `172.100.100.102` |
+| Router | `EOS3` | arista_ceos | `172.100.100.103` |
+| Router | `EOS4` | arista_ceos | `172.100.100.104` |
+| Router | `EOS5` | arista_ceos | `172.100.100.105` |
+| Router | `EOS6` | arista_ceos | `172.100.100.106` |
+
+</details>
+
+---
+
+## 💡 Tips {.unlisted .unnumbered}
+
+- Refer to `README.md` for lab operations
+
+---
+
+[Open terminals][close-and-reuse-lab-terminals]{#terminal-open-action .d-none}
+
+[Close terminals][close-terminal-layout]{#terminal-close-action .d-none}
+
+[close-terminal-layout]: command:runCommands {data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"groups":[{}]}}]}]'}
+
+<button id="terminal-toggle" type="button" class="btn btn-primary">
+  Open terminals
+</button>
+
+<script>
+const button = document.getElementById("terminal-toggle");
+let opened = false;
+
+button.addEventListener("click", () => {
+  document.getElementById(
+    opened ? "terminal-close-action" : "terminal-open-action"
+  ).click();
+
+  opened = !opened;
+  button.textContent = opened ? "Close terminals" : "Open terminals";
+});
+</script>
+
+---
+
+<sub>Auto-generated by <code>init_lab.py</code> on lab readiness. Close this tab with <kbd>Ctrl</kbd>+<kbd>W</kbd>.</sub>
+
+:::

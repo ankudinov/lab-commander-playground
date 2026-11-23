@@ -1,0 +1,38 @@
+# Checking the fabric {#sec-checking}
+
+[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+
+Start with the device inventory in @tbl-inventory. The link plan is described in
+@sec-underlay; both references should open the matching section of the previous
+chapter.
+
+## Verification checklist
+
+- [ ] Every node in @tbl-inventory is running.
+- [ ] Each leaf can reach both spine loopbacks through the underlay.
+- [ ] Expected BGP sessions are established.
+- [ ] EVPN routes are present on both leaves.
+- [ ] Traffic passes between the two hosts.
+
+## Example command output
+
+```text
+Fabric validation — illustrative output
+Nodes reachable:       6 / 6
+BGP sessions:          8 / 8 established
+Host-to-host traffic:  passed
+```
+
+::: {.callout-warning collapse="true"}
+## A failed check is a starting point
+
+If a BGP session is down, inspect the corresponding interfaces and IP
+reachability before changing the routing configuration. These instructions are
+reference text; this book executes no commands.
+:::
+
+## Save-to-refresh check
+
+Change a sentence in this chapter and save it while its preview is open. The
+updated text should appear without losing the book sidebar. Follow the link to
+[the welcome page](index.qmd), then use the chapter navigation to return here.

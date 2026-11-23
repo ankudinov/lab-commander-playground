@@ -1,0 +1,36 @@
+# Welcome {.unnumbered}
+
+[Back to dashboard](../dashboard/lab-dashboard.html){data-preview-source="../../lab-dashboard.qmd"}
+
+This miniature handbook tests a Quarto **book**: several documents share a
+sidebar, chapter numbering, cross-references, search and previous/next navigation.
+The walkthrough examples are illustrative; the SSH buttons connect to the RCF lab.
+
+## 🔐 SSH to Nodes
+
+{{< include ../shared/_connect-to-nodes.qmd >}}
+
+## Reading the handbook
+
+1. Open [Building a fabric](building-a-fabric.qmd) from this link or the sidebar.
+2. Follow its cross-references to [Checking the fabric](checking-the-fabric.qmd).
+3. Use the previous/next links at the bottom to move between chapters.
+4. Search for **underlay** using the book's search field.
+
+::: {.callout-note}
+## Preview check
+
+Open any chapter in acLabs Preview. Quarto builds the whole book and search
+index with the selected preview theme; no manual render is needed. See
+`../README.md` for browser preview and static build commands.
+:::
+
+## What this example uses
+
+- Native Quarto book navigation and theme styling.
+- Markdown tables, code samples, callouts and checklists.
+- Cross-references between files in the same project.
+- The dashboard's six real RCF SSH links, shared through a Quarto include; no
+  custom CSS or executable code cells.
+
+`../README.md` describes how to build and preview this book.

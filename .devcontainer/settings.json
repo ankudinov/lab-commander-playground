@@ -1,0 +1,23 @@
+{
+  "workbench.startupEditor": "readme",
+  "task.allowAutomaticTasks": "on",
+  "remote.autoForwardPorts": false,
+  "remote.restoreForwardedPorts": false,
+  "quarto.preview.allowedCommands": [
+    "containerlab.lab.graph.topoViewer",
+    "runCommands",
+    "vscode.open",
+    "vscode.openWith",
+    "vscode.setEditorLayout",
+    "workbench.action.closeEditorsInOtherGroups",
+    "workbench.action.closePanel",
+    "workbench.action.createTerminalEditor",
+    "workbench.action.focusFirstEditorGroup",
+    "workbench.action.focusFourthEditorGroup",
+    "workbench.action.focusSecondEditorGroup",
+    "workbench.action.focusThirdEditorGroup",
+    "workbench.action.terminal.killAll",
+    "workbench.action.terminal.new",
+    "workbench.action.terminal.sendSequence"
+  ]
+}

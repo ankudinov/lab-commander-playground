@@ -8,6 +8,7 @@
 **/.lab/
 **/LAB-READY.md
 **/.quarto/
+/lab/quarto/_site/
 **/*_files/
 .DS_Store
 *.log
