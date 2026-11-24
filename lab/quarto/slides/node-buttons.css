@@ -13,3 +13,11 @@
   font-family: monospace;
   text-align: center;
 }
+
+.reveal .ssh-demo button.btn {
+  width: 100%;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}

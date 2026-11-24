@@ -1,0 +1,52 @@
+<!-- This reset closes every editor tab outside group 1, including documents.
+     Keep the preview in group 1. Panel terminals, including Quarto, are preserved. -->
+[reset-side-terminal-editors]: command:runCommands {data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"groups":[{}]}}]}]'}
+
+[Close terminals][reset-side-terminal-editors]{#terminal-toggle-close-action hidden="hidden"}
+
+```{=html}
+<script>
+(() => {
+  const initialize = () => {
+    const buttons = [...document.querySelectorAll("button[data-terminal-toggle]")];
+    const closeAction = document.getElementById("terminal-toggle-close-action");
+
+    const setOpened = (button, opened) => {
+      button.setAttribute("aria-pressed", String(opened));
+      const label = button.dataset.terminalLabel || "terminals";
+      button.textContent = `${opened ? "Close" : "Open"} ${label}`;
+    };
+    const resetButtons = () => buttons.forEach(button => setOpened(button, false));
+
+    for (const button of buttons) {
+      button.addEventListener("click", () => {
+        const opened = button.getAttribute("aria-pressed") === "true";
+        const action = opened ? closeAction
+          : button.closest(".terminal-toggle").querySelector(".terminal-open-action");
+        if (!action) return;
+
+        // Native command links still execute through Quarto's command bridge.
+        // There is no completion callback; labels reflect requested actions.
+        action.click();
+        resetButtons();
+        if (!opened) setOpened(button, true);
+      });
+    }
+
+    for (const button of document.querySelectorAll("button[data-terminal-reset]")) {
+      button.addEventListener("click", () => {
+        if (!closeAction) return;
+        closeAction.click();
+        resetButtons();
+      });
+    }
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initialize, { once: true });
+  } else {
+    initialize();
+  }
+})();
+</script>
+```

@@ -5,35 +5,65 @@
      the rendered attribute must contain valid JSON. -->
 ::: {.ssh-demo}
 
-Each click opens a new terminal and connects as `admin`. Complete any SSH login prompts; the screen clears after login. Logging out closes the terminal.
+Choose a node, then use **Open terminals** to connect as `admin` beside the
+preview. Complete any SSH login prompts; the screen clears after login.
+**Close terminals** resets the side editor tabs. Opening another set replaces
+those tabs, including any non-terminal documents. Logging out closes the SSH
+terminal; button labels follow clicks, not connection state.
 
 **Router**
 
 ::: {.grid .gap-2}
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS1](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS1"},"location":2}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS1 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands){.terminal-open-action hidden="hidden" data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333}]}},{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS1"},"location":{"viewColumn":1}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS1 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS1" aria-pressed="false">SSH EOS1</button>
+:::
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS2](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS2%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS2%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands?%5B%7B%22commands%22%3A%5B%22workbench.action.focusFirstEditorGroup%22%2C%22workbench.action.closeEditorsInOtherGroups%22%2C%7B%22command%22%3A%22vscode.setEditorLayout%22%2C%22args%22%3A%7B%22orientation%22%3A0%2C%22groups%22%3A%5B%7B%22size%22%3A0.666667%7D%2C%7B%22size%22%3A0.333333%7D%5D%7D%7D%2C%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS2%22%7D%2C%22location%22%3A%7B%22viewColumn%22%3A1%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS2%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.terminal-open-action hidden="hidden"}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS2" aria-pressed="false">SSH EOS2</button>
+:::
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS3](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.terminal.new","args":{"config":{"name":"SSH admin@EOS3"}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS3 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands){.terminal-open-action hidden="hidden" data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333}]}},{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS3"},"location":{"viewColumn":1}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS3 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS3" aria-pressed="false">SSH EOS3</button>
+:::
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS4](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS4%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS4%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands?%5B%7B%22commands%22%3A%5B%22workbench.action.focusFirstEditorGroup%22%2C%22workbench.action.closeEditorsInOtherGroups%22%2C%7B%22command%22%3A%22vscode.setEditorLayout%22%2C%22args%22%3A%7B%22orientation%22%3A0%2C%22groups%22%3A%5B%7B%22size%22%3A0.666667%7D%2C%7B%22size%22%3A0.333333%7D%5D%7D%7D%2C%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS4%22%7D%2C%22location%22%3A%7B%22viewColumn%22%3A1%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS4%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.terminal-open-action hidden="hidden"}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS4" aria-pressed="false">SSH EOS4</button>
+:::
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS5](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.terminal.new","args":{"config":{"name":"SSH admin@EOS5"},"location":1}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS5 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands){.terminal-open-action hidden="hidden" data-args='[{"commands":["workbench.action.focusFirstEditorGroup","workbench.action.closeEditorsInOtherGroups",{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333}]}},{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS5"},"location":{"viewColumn":1}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"exec ssh -t admin@EOS5 \\"bash stty raw -echo -F \\\\$SSH_TTY; clear; exec /usr/bin/RunCli\\"\\r"}}]}]'}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS5" aria-pressed="false">SSH EOS5</button>
+:::
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[EOS6](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS6%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS6%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
+::: {.terminal-toggle}
+[Open terminals](command:runCommands?%5B%7B%22commands%22%3A%5B%22workbench.action.focusFirstEditorGroup%22%2C%22workbench.action.closeEditorsInOtherGroups%22%2C%7B%22command%22%3A%22vscode.setEditorLayout%22%2C%22args%22%3A%7B%22orientation%22%3A0%2C%22groups%22%3A%5B%7B%22size%22%3A0.666667%7D%2C%7B%22size%22%3A0.333333%7D%5D%7D%7D%2C%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS6%22%7D%2C%22location%22%3A%7B%22viewColumn%22%3A1%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS6%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D){.terminal-open-action hidden="hidden"}
+
+<button type="button" class="btn btn-primary font-monospace w-100" data-terminal-toggle data-terminal-label="SSH EOS6" aria-pressed="false">SSH EOS6</button>
+:::
 :::
 
 :::
 :::
+
+{{< include ../shared/_terminal-toggles.qmd >}}
