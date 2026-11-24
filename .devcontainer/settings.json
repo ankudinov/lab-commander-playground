@@ -16,6 +16,7 @@
     "workbench.action.focusFourthEditorGroup",
     "workbench.action.focusSecondEditorGroup",
     "workbench.action.focusThirdEditorGroup",
+    "workbench.action.terminal.clear",
     "workbench.action.terminal.killAll",
     "workbench.action.terminal.new",
     "workbench.action.terminal.sendSequence"

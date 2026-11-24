@@ -15,7 +15,7 @@ format:
 
 [right-three-fixed]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},"workbench.action.focusSecondEditorGroup"]}]'}
 
-[lab-terminals]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},{"command":"aclabs.shell","args":{"id":"lab-shell","name":"Lab shell","TerminalLocation":{"viewColumn":2}}},{"command":"aclabs.ssh","args":{"host":"EOS1","user":"admin","TerminalLocation":{"viewColumn":3}}},{"command":"aclabs.ssh","args":{"host":"EOS2","user":"admin","TerminalLocation":{"viewColumn":4}}}]}]'}
+[lab-terminals]: command:runCommands {.btn .btn-primary data-args='[{"commands":[{"command":"vscode.setEditorLayout","args":{"orientation":0,"groups":[{"size":0.666667},{"size":0.333333,"groups":[{"size":0.333333},{"size":0.333333},{"size":0.333334}]}]}},{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"Lab shell"},"location":{"viewColumn":1}}},{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS1"},"location":{"viewColumn":2}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"ssh admin@EOS1\r"}},"workbench.action.terminal.clear",{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS2"},"location":{"viewColumn":3}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"ssh admin@EOS2\r"}},"workbench.action.terminal.clear"]}]'}
 
 [close-terminals]: command:workbench.action.terminal.killAll {.btn .btn-danger}
 [close-terminals-2]: command:runCommands {.btn .btn-danger data-args='[{"commands":[{"command":"workbench.action.terminal.killAll"},{"command":"vscode.setEditorLayout","args":{"groups":[{}]}},{"command":"workbench.action.closePanel"}]}]'}
@@ -142,34 +142,34 @@ Open a shell terminal in the bottom panel for running commands like `make build`
 ::: {.card .lab-card .p-3 .mb-3 aria-label="SSH to nodes"}
 ## 🔐 SSH to Nodes {#connect-to-nodes .unlisted .unnumbered}
 
-One click → logged in as `admin`. Each node opens its own terminal tab; clicking the same node again brings the existing tab to focus.
+Each click opens a new terminal, starts SSH as `admin`, and clears the current terminal output. Complete any SSH login prompts in that terminal.
 
 **Router**
 
 ::: {.grid .gap-2}
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS1](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS1","user":"admin","TerminalLocation":"Editor"}]'}
+[$ ssh EOS1](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.createTerminalEditor","args":{"config":{"name":"SSH admin@EOS1"},"location":2}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"ssh admin@EOS1\r"}},"workbench.action.terminal.clear"]}]'}
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS2](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS2%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Panel%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+[$ ssh EOS2](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS2%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS2%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS3](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='["admin@EOS3"]'}
+[$ ssh EOS3](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.terminal.new","args":{"config":{"name":"SSH admin@EOS3"}}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"ssh admin@EOS3\r"}},"workbench.action.terminal.clear"]}]'}
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS4](command:aclabs.ssh?%5B%22admin%40EOS4%22%5D){.btn .btn-primary .font-monospace .w-100}
+[$ ssh EOS4](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS4%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS4%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS5](command:aclabs.ssh){.btn .btn-primary .font-monospace .w-100 data-args='[{"host":"EOS5","user":"admin","TerminalLocation":"Panel"}]'}
+[$ ssh EOS5](command:runCommands){.btn .btn-primary .font-monospace .w-100 data-args='[{"commands":[{"command":"workbench.action.terminal.new","args":{"config":{"name":"SSH admin@EOS5"},"location":1}},{"command":"workbench.action.terminal.sendSequence","args":{"text":"ssh admin@EOS5\r"}},"workbench.action.terminal.clear"]}]'}
 :::
 
 ::: {.g-col-6 .g-col-md-4}
-[$ ssh EOS6](command:aclabs.ssh?%5B%7B%22host%22%3A%22EOS6%22%2C%22user%22%3A%22admin%22%2C%22TerminalLocation%22%3A%22Editor%22%7D%5D){.btn .btn-primary .font-monospace .w-100}
+[$ ssh EOS6](command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS6%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS6%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D){.btn .btn-primary .font-monospace .w-100}
 :::
 
 :::
