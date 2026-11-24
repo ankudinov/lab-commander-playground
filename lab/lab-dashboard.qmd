@@ -41,11 +41,11 @@ _Tech Library Solution Guide_
 
 [Lab handbook](book/index.html) · [Presentation slides](slides/preview-briefing.html)
 
-[Open three terminals][right-three-fixed]
-[Reset three shells][close-and-reuse-lab-terminals]
-[Close all terminals][close-terminals-2]
+<!-- [Open three terminals][right-three-fixed] -->
+[3x Shell][close-and-reuse-lab-terminals]
+[Shell and 2x SSH][lab-terminals]
 
-[SSH terminals][lab-terminals]
+[Close all terminals][close-terminals-2]
 
 ::: {.callout-note}
 **Native terminal demo:** first open **SSH terminals**, complete both SSH logins,
