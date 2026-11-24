@@ -50,37 +50,37 @@
     <text class="rcf-port" x="539" y="456">et1</text>
     <text class="rcf-port" x="361" y="456">et1</text>
   </g>
-  <a class="rcf-device" data-node="EOS1" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS1%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS1%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS1">
+  <a class="rcf-device" data-node="EOS1" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS1%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS1%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS1">
     <title>SSH admin@EOS1 (172.100.100.101)</title>
     <rect x="218" y="198" width="124" height="64" rx="8"/>
     <text x="280" y="227" font-size="18" font-weight="bold">EOS1</text>
     <text x="280" y="248" font-size="12">172.100.100.101</text>
   </a>
-  <a class="rcf-device" data-node="EOS2" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS2%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS2%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS2">
+  <a class="rcf-device" data-node="EOS2" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS2%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS2%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS2">
     <title>SSH admin@EOS2 (172.100.100.102)</title>
     <rect x="558" y="198" width="124" height="64" rx="8"/>
     <text x="620" y="227" font-size="18" font-weight="bold">EOS2</text>
     <text x="620" y="248" font-size="12">172.100.100.102</text>
   </a>
-  <a class="rcf-device" data-node="EOS3" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS3%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS3%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS3">
+  <a class="rcf-device" data-node="EOS3" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS3%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS3%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS3">
     <title>SSH admin@EOS3 (172.100.100.103)</title>
     <rect x="558" y="438" width="124" height="64" rx="8"/>
     <text x="620" y="467" font-size="18" font-weight="bold">EOS3</text>
     <text x="620" y="488" font-size="12">172.100.100.103</text>
   </a>
-  <a class="rcf-device" data-node="EOS4" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS4%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS4%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS4">
+  <a class="rcf-device" data-node="EOS4" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS4%22%7D%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS4%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS4">
     <title>SSH admin@EOS4 (172.100.100.104)</title>
     <rect x="218" y="438" width="124" height="64" rx="8"/>
     <text x="280" y="467" font-size="18" font-weight="bold">EOS4</text>
     <text x="280" y="488" font-size="12">172.100.100.104</text>
   </a>
-  <a class="rcf-device" data-node="EOS5" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS5%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS5%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS5">
+  <a class="rcf-device" data-node="EOS5" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.terminal.new%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS5%22%7D%2C%22location%22%3A1%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS5%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS5">
     <title>SSH admin@EOS5 (172.100.100.105)</title>
     <rect x="18" y="68" width="124" height="64" rx="8"/>
     <text x="80" y="97" font-size="18" font-weight="bold">EOS5</text>
     <text x="80" y="118" font-size="12">172.100.100.105</text>
   </a>
-  <a class="rcf-device" data-node="EOS6" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS6%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22ssh%20admin%40EOS6%5Cr%22%7D%7D%2C%22workbench.action.terminal.clear%22%5D%7D%5D" aria-label="SSH admin@EOS6">
+  <a class="rcf-device" data-node="EOS6" href="command:runCommands?%5B%7B%22commands%22%3A%5B%7B%22command%22%3A%22workbench.action.createTerminalEditor%22%2C%22args%22%3A%7B%22config%22%3A%7B%22name%22%3A%22SSH%20admin%40EOS6%22%7D%2C%22location%22%3A2%7D%7D%2C%7B%22command%22%3A%22workbench.action.terminal.sendSequence%22%2C%22args%22%3A%7B%22text%22%3A%22exec%20ssh%20-t%20admin%40EOS6%20%5C%22bash%20stty%20raw%20-echo%20-F%20%5C%5C%24SSH_TTY%3B%20clear%3B%20exec%20%2Fusr%2Fbin%2FRunCli%5C%22%5Cr%22%7D%7D%5D%7D%5D" aria-label="SSH admin@EOS6">
     <title>SSH admin@EOS6 (172.100.100.106)</title>
     <rect x="388" y="38" width="124" height="64" rx="8"/>
     <text x="450" y="67" font-size="18" font-weight="bold">EOS6</text>
